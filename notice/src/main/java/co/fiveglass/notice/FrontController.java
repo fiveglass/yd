@@ -14,7 +14,10 @@ import javax.servlet.http.HttpServletResponse;
 import co.fiveglass.notice.command.NoticeList;
 import co.fiveglass.notice.common.Command;
 import co.fiveglass.notice.main.command.MainCommand;
+import co.fiveglass.notice.member.command.MemberInsert;
+import co.fiveglass.notice.member.command.MemberJoin;
 import co.fiveglass.notice.member.command.MemberList;
+import co.fiveglass.notice.member.command.AjaxCheck;
 
 
 @WebServlet("*.do")
@@ -34,6 +37,9 @@ public class FrontController extends HttpServlet {
 		map.put("/main.do", new MainCommand());//처음 들어오는 페이지 돌려준다.
 		map.put("/noticeList.do", new NoticeList() ); //게시글 목록보기
 		map.put("/memberList.do", new MemberList()); //멤버목록보기
+		map.put("/memberJoin.do", new MemberJoin());
+		map.put("/memberInsert.do", new MemberInsert());
+		map.put("/AjaxCheck.do", new AjaxCheck());
 	}
 
 	//더하기 : request response 서버에서 만들어줌
@@ -48,16 +54,22 @@ public class FrontController extends HttpServlet {
 		String viewPage = command.exec(request, response); 
 		
 		if(!viewPage.endsWith(".do")) {
+			
+			if(viewPage.startsWith("Ajax : ")) {
+				response.setContentType("text/html; charset=UTF-8");
+				response.getWriter().append(viewPage.substring(5));
+				return;
+			}
 			viewPage = "WEB-INF/views/" + viewPage + ".jsp";
+			
+			RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
+			dispatcher.forward(request, response);
 		}else {
 			response.sendRedirect(viewPage); //결과가 *.do이면 위임해버림
 			
 		}
-		
-		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
-		dispatcher.forward(request, response);
-		
-		
+			
 	}
+	
 
 }

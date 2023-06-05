@@ -9,6 +9,7 @@
 </head>
 <body>
 	<div align="center">
+	<jsp:include page="../main/menu.jsp" />
 	<div><h1>회원목록보기</h1></div>
 	<div>
 		<c:forEach items = "${members }" var = "m">
@@ -16,6 +17,9 @@
 			${m.memberTel } : ${m.memberGender } <br>
 		</c:forEach>
 	</div>
+		<div>
+			<a href="memberJoin.do">회원가입</a>
+		</div>
 	</div>
 </body>
 </html>

@@ -13,6 +13,8 @@
 	</select>
 	<insert id="memberInsert"
 		parameterType ="co.fiveglass.notice.member.service.MemberVO">
+		 INSERT INTO MEMBER
+		 VALUES(#{memberId}, #{memberPassword}, #{memberName}, #{memberAge}, #{memberTel}, #{memberGender})
 	</insert>
 	<update id="memberUpdate">
 	

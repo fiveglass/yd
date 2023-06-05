@@ -8,6 +8,7 @@
 </head>
 <body>
 <div align ="center">
+<jsp:include page="../main/menu.jsp" />
 <div><h1>게시글 목록 출력하기</h1></div>
 	<div>
 		<c:forEach items="${notices }" var="n">
