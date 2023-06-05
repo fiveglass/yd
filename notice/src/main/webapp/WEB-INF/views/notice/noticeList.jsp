@@ -11,11 +11,30 @@
 <jsp:include page="../main/menu.jsp" />
 <div><h1>게시글 목록 출력하기</h1></div>
 	<div>
-		<c:forEach items="${notices }" var="n">
-			${n.noticeId} : ${n.noticeWriter} : ${n.noticeTitle} : ${n.noticeWdate}
-			: ${n.noticeHit} <br>
-		</c:forEach>	
+		<table border="1">
+			<thead>
+				<tr>
+					<th width="100">순번</th>
+					<th width="150">작성자</th>
+					<th width="200">제목</th>
+					<th width="150">작성일자</th>
+					<th width="100">조회수</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach items="${notices }" var="n">
+					<tr>
+						<td align="center">${n.noticeId}</td>
+						<td align="center">${n.noticeWriter}</td>
+						<td align="center">${n.noticeTitle}</td>
+						<td align="center">${n.noticeWdate}</td>
+						<td align="center">${n.noticeHit}</td>
+					</tr>
+				</c:forEach>	
+			</tbody>
+		</table>
 	</div>
+	<jsp:include page="../main/footer.jsp"></jsp:include>
 </div>
 </body>
 </html>

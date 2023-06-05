@@ -20,8 +20,11 @@
 	
 	</update>
 	<delete id="memberDelete">
-		DELETE * FROM MEMBER
-	 	WHERE MEMBER_ID = #{member_id}
+	
 	</delete>
+	<select id="memberLogin" resultType="co.fiveglass.notice.member.service.MemberVO">
+		SELECT * FROM MEMBER
+		WHERE MEMBER_ID = #{memberId} AND MEMBER_PASSWORD = #{memberPassword}
+	</select>
 </mapper>
 

@@ -79,6 +79,7 @@
 				<input type="button" onclick = "Location.href='main.do'" value="홈 가기">
 			</div>
 		</form>
+		<jsp:include page="../main/footer.jsp"></jsp:include>
 	</div>
 </div>
 <script type="text/javascript">

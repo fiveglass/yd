@@ -9,5 +9,5 @@ public interface MemberMapper {
 	int memberUpdate(MemberVO vo); //수정
 	int memberDelete(MemberVO vo); //삭제
 	
-	
+	MemberVO memberLogin(MemberVO vo);
 }

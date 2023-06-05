@@ -46,7 +46,9 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public MemberVO memberLogin(MemberVO vo) {
 		// TODO Auto-generated method stub
-		return null;
+		return map.memberLogin(vo);
 	}
+
+
 
 }

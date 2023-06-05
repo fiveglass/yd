@@ -13,5 +13,8 @@
 	<div>
 		<jsp:include page="menu.jsp"></jsp:include>
 	</div>
+	<div align="center">
+		<jsp:include page="footer.jsp"></jsp:include>
+	</div>
 </body>
 </html>

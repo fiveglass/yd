@@ -7,10 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:include page="../main/menu.jsp" />
-	<div align = "center">
-		<h1>${message }</h1>
-		<button type="button" onclick="location.href='memberList.do'">멤버목록</button>
+	<div>
+		<hr>
+		<h3> CopyWriter@fiveglass aaa.com @2023</h3>
 	</div>
 </body>
 </html>
