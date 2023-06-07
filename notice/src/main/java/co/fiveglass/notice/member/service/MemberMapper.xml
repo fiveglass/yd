@@ -3,13 +3,16 @@
 <mapper namespace="co.fiveglass.notice.member.service.MemberMapper">
 	<select id="memberSelectList" 
 		resultType = "co.fiveglass.notice.member.service.MemberVO">
-	 SELECT * FROM MEMBER
+		 SELECT * FROM MEMBER
 	</select>
 	<select id="memberSelect" 
 		parameterType ="co.fiveglass.notice.member.service.MemberVO"
 		resultType = "co.fiveglass.notice.member.service.MemberVO">
 		 SELECT * FROM MEMBER
-		 WHERE MEMBER_ID = #{member_id}
+		 WHERE MEMBER_ID = #{memberId}
+		<if test = "memberPassword != null">
+			AND MEMBER_PASSWORD = #{memberPassword}
+		</if>
 	</select>
 	<insert id="memberInsert"
 		parameterType ="co.fiveglass.notice.member.service.MemberVO">

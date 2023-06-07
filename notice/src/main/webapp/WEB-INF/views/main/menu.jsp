@@ -43,18 +43,17 @@
       
          <nav>
              <ul>
-                 <li><a href="noticeList.do">게시글목록</a></li>
+                 <li><a href="main.do">main</a></li>
+                 <li><a href="noticeList.do">notice</a></li>
+                 <li><a href="memberList.do">memberlist</a></li>
                  <c:if test="${empty id }">
-                 	<li><a href="memberJoin.do">회원가입</a></li>
+                 	<li><a href="memberJoin.do">join</a></li>
                  </c:if>
-                 <li><a href="memberList.do">멤버목록</a></li>
-                 <li><a href="">1단보류</a></li>
-                 <li><a href="">2단보류</a></li>
                  <c:if test="${empty id }">
-                 	<li><a href="memberLoginForm.do">로그인</a></li>
+                 	<li><a href="memberLoginForm.do">login</a></li>
                  </c:if>
                  <c:if test="${not empty id }">
-                 	<li><a href="">로그아웃</a></li>
+                 	<li><a href="memberLogout.do">logout</a></li>
                  </c:if>
                  <c:if test="${not empty name }">
                  	<li><a href="">${name }님 로그인</a></li>

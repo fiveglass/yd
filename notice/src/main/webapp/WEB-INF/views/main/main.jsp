@@ -9,9 +9,12 @@
 <body>
 	<div align="center">
 		<h1>Welcome to My Home</h1>
-	</div>
 	<div>
 		<jsp:include page="menu.jsp"></jsp:include>
+	</div>
+	<div><br>
+		<img alt="배경화면" src="img/스누피여행.jpg" width="500" height="500">
+	</div>
 	</div>
 	<div align="center">
 		<jsp:include page="footer.jsp"></jsp:include>

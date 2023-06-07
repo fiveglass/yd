@@ -11,12 +11,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import co.fiveglass.notice.command.NoticeDelete;
+import co.fiveglass.notice.command.NoticeEdit;
+import co.fiveglass.notice.command.NoticeInsert;
+import co.fiveglass.notice.command.NoticeInsertForm;
 import co.fiveglass.notice.command.NoticeList;
+import co.fiveglass.notice.command.NoticeSelect;
+import co.fiveglass.notice.command.NoticeUpdate;
 import co.fiveglass.notice.common.Command;
 import co.fiveglass.notice.main.command.MainCommand;
 import co.fiveglass.notice.member.command.MemberInsert;
 import co.fiveglass.notice.member.command.MemberJoin;
 import co.fiveglass.notice.member.command.MemberList;
+import co.fiveglass.notice.member.command.MemberLogout;
 import co.fiveglass.notice.member.command.memberLogin;
 import co.fiveglass.notice.member.command.memberLoginForm;
 import co.fiveglass.notice.member.command.AjaxCheck;
@@ -38,12 +45,19 @@ public class FrontController extends HttpServlet {
 		// 처음 시작 될 때 동작하는 메소드, 요청한 것을 담아두는 곳
 		map.put("/main.do", new MainCommand());//처음 들어오는 페이지 돌려준다.
 		map.put("/noticeList.do", new NoticeList() ); //게시글 목록보기
+		map.put("/noticeSelect.do", new NoticeSelect());
+		map.put("/noticeInsertForm.do", new NoticeInsertForm());
+		map.put("/noticeEdit.do", new NoticeEdit());
+		map.put("/noticeUpdate.do", new NoticeUpdate());
+		map.put("/noticeDelete.do", new NoticeDelete());
+		map.put("/noticeInsert.do", new NoticeInsert());
 		map.put("/memberList.do", new MemberList()); //멤버목록보기
 		map.put("/memberJoin.do", new MemberJoin());
 		map.put("/memberInsert.do", new MemberInsert());
 		map.put("/AjaxCheck.do", new AjaxCheck());
 		map.put("/memberLoginForm.do", new memberLoginForm());
 		map.put("/memberLogin.do", new memberLogin());
+		map.put("/memberLogout.do", new MemberLogout());
 	}
 
 	//더하기 : request response 서버에서 만들어줌

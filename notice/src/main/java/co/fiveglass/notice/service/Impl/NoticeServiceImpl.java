@@ -16,39 +16,10 @@ public class NoticeServiceImpl implements NoticeService {
 	
 	@Override
 	public List<NoticeVO> noticeSelectList() {
-//		String sql = "SELECT * FROM notice";
-//		List<NoticeVO> notices = new ArrayList<NoticeVO>();
-//		NoticeVO vo;
-//		try {
-//			conn = dao.getConnection();
-//			psmt = conn.prepareStatement(sql);
-//			rs = psmt.executeQuery();
-//			while(rs.next()){
-//				vo = new NoticeVO();
-//				vo.setNoticeId(rs.getInt("notice_id"));
-//				vo.setNoticeWriter(rs.getString("notice_writer"));
-//				vo.setNoticeTitle(rs.getString("notice_title"));
-//				vo.setNoticeWdate(rs.getDate("notice_wdate"));
-//				vo.setNoticeHit(rs.getInt("notice_hit"));
-//				notices.add(vo);
-//			}
-//		}catch(SQLException e) {
-//			e.printStackTrace();
-//		}finally {
-//			close();
-//		}
+
 		return map.noticeSelectList();
 	}
 	
-//	private void close() {
-//		try {
-//			if(rs != null) rs.close();
-//			if(psmt != null) psmt.close();
-//			if(conn != null) conn.close();
-//		}catch(SQLException e) {
-//			e.printStackTrace();
-//		}
-//	}
 
 	@Override
 	public NoticeVO noticeSelect(NoticeVO vo) {

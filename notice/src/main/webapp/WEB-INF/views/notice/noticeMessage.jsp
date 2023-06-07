@@ -7,10 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:include page="../main/menu.jsp" />
 	<div align = "center">
+		<jsp:include page="../main/menu.jsp" />
 		<h1>${message }</h1>
-		<button type="button" onclick="location.href='memberList.do'">멤버목록</button>
 		<jsp:include page="../main/footer.jsp"></jsp:include>
 	</div>
 </body>
