@@ -46,6 +46,7 @@
                  <li><a href="main.do">main</a></li>
                  <li><a href="noticeList.do">notice</a></li>
                  <li><a href="memberList.do">memberlist</a></li>
+                 <li><a href="productList.do">제품관리</a></li>
                  <c:if test="${empty id }">
                  	<li><a href="memberJoin.do">join</a></li>
                  </c:if>

@@ -13,6 +13,8 @@
 	</select>
 	<insert id="noticeInsert" 
 		parameterType = "co.fiveglass.notice.service.NoticeVO">
+		<!-- selectKey는 keyProperty에 해당하는 데이터를 받아와서 반환 -->
+		<!-- 여기서 order="BEFORE"는-->
 		<selectKey keyProperty = "noticeId" resultType="int" order="BEFORE">
 			SELECT MAX(NOTICE_ID) + 1 AS noticeId FROM NOTICE
 		</selectKey>

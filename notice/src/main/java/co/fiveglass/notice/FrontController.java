@@ -26,6 +26,9 @@ import co.fiveglass.notice.member.command.MemberList;
 import co.fiveglass.notice.member.command.MemberLogout;
 import co.fiveglass.notice.member.command.memberLogin;
 import co.fiveglass.notice.member.command.memberLoginForm;
+import co.fiveglass.notice.product.command.ProductInsert;
+import co.fiveglass.notice.product.command.ProductInsertForm;
+import co.fiveglass.notice.product.command.ProductList;
 import co.fiveglass.notice.member.command.AjaxCheck;
 
 
@@ -58,6 +61,9 @@ public class FrontController extends HttpServlet {
 		map.put("/memberLoginForm.do", new memberLoginForm());
 		map.put("/memberLogin.do", new memberLogin());
 		map.put("/memberLogout.do", new MemberLogout());
+		map.put("/productList.do", new ProductList());
+		map.put("/productInsertForm.do", new ProductInsertForm());
+		map.put("/productInsert.do", new ProductInsert());
 	}
 
 	//더하기 : request response 서버에서 만들어줌

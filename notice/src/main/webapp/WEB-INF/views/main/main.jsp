@@ -13,7 +13,7 @@
 		<jsp:include page="menu.jsp"></jsp:include>
 	</div>
 	<div><br>
-		<img alt="배경화면" src="img/스누피여행.jpg" width="500" height="500">
+		<img alt="배경화면" src="img/루피얼빡샷.jpg" width="500" height="500">
 	</div>
 	</div>
 	<div align="center">

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.fiveglass.notice.product.service.ProductMapper"> <!-- 다른 멤퍼를 가르키는 것 -->
+	<!-- id에는 mapper jave파일과 기능명이 같아야함, 그래야 이 sql문인지 인식을 함 -->
+	<!-- resultType은 반환타입으로 vo객체로 받겠다는 의미-->
+	<select id="productSelectList" resultType="co.fiveglass.notice.product.service.ProductVO">
+		SELECT * FROM PRODUCT
+	</select>
+	<select id="productSelect" resultType="co.fiveglass.notice.product.service.ProductVO">
+		SELECT * FROM PRODUCT WHWERE PRODUCT_ID = #{productId}
+	</select>
+	<insert id="productInsert">
+		INSERT INTO PRODUCT
+		VALUES(#{productId}, #{productName}, #{productImage}, #{productDir})
+	</insert>
+	<update id="productUpdate">
+		
+	</update>
+	<delete id="productDelete">
+	
+	</delete>
+</mapper>
