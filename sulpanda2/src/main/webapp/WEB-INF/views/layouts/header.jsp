@@ -1,0 +1,113 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+ <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
+        <div class="container text-light">
+            <div class="w-100 d-flex justify-content-between">
+                <div>
+                    <i class="fa fa-envelope mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:info@company.com">info@company.com</a>
+                    <i class="fa fa-phone mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340">010-020-0340</a>
+                </div>
+                <div>
+                    <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin fa-sm fa-fw"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Close Top Nav -->
+
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">
+                Zay
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+                <div class="flex-fill">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="main.do">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="recommend.do" wi>술추천</a>
+                        </li>
+                        <!-- 전체상품페이지 -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="product.do">전체상품</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="boardList.do">문의게시판</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar align-self-center d-flex">
+                    <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
+                            <div class="input-group-text">
+                                <i class="fa fa-fw fa-search"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
+                        <i class="fa fa-fw fa-search text-dark mr-2"></i>
+                    </a>
+                    
+                    <!--cart@@@@@@@@@@@@@@@@@@@@@@@@@@  -->
+                  
+                    <a class="nav-icon position-relative text-decoration-none" href="cart.do">
+                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+                        <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
+                    </a>
+                    
+                    <a id="login-icon" class="nav-icon position-relative text-decoration-none" href="#">
+					    <i class="fa fa-fw fa-user text-dark mr-3"></i>
+					</a>
+					
+					<!--테스트용  -->
+					<a href ="userpage.do">유저페이지</a>
+					
+					<a href ="managerpage.do">관리자 페이지</a>
+					
+					<script>
+				    var loggedIn = false; // 로그인 상태에 따라 true 또는 false로 설정
+				
+				    var loginIcon = document.getElementById("login-icon");
+				
+				    loginIcon.addEventListener("click", function() {
+				        if (loggedIn) {
+				            // 로그인 상태에서 아이콘 클릭 시 동작
+				            window.location.href = "mypage.do"; // 마이페이지로 이동하도록 설정
+				        } else {
+				            // 로그인 상태가 아닐 때 아이콘 클릭 시 동작
+				            window.location.href = "login.do"; // 로그인 페이지로 이동하도록 설정
+				        }
+				    });
+					</script>
+
+                    
+                </div>
+            </div>
+
+        </div>
+    </nav>
+</body>
+</html>

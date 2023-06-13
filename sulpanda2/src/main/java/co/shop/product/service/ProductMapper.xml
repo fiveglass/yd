@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.shop.product.service.ProductMapper">
+	<select id="getAllProducts" resultType="co.shop.product.service.ProductVO">
+		SELECT * FROM product
+	</select>
+	
+	<select id="productInsert" resultType="co.shop.product.service.ProductVO">
+		INSERT INTO product
+		VALUES(#{productId}, #{productName}, #{productKind}, #{productImg}, #{productImgPath}, #{productPrice}, sysdate,
+			#{productTaste}, #{productSparkling}, #{productABV}, 'N', null, null)
+	</select>
+</mapper>

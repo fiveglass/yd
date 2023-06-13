@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.shop.member.service.MemberMapper">
+	<select id="memberSelectList" resultType="co.shop.member.service.MemberVO">
+		SELECT * FROM member
+	</select>
+	<select id="memberSelect" resultType="co.shop.member.service.MemberVO">
+		SELECT * FROM member
+		WHERE member_id = #{memberId}
+		<if test="memberPw != null">
+			AND member_pw = #{memberPw}
+		</if>
+		<if test="memberTel != null">
+			AND member_tel = #{memberTel}
+		</if>
+	</select>
+	<insert id="memberInsert">
+		INSERT INTO member
+		VALUES(#{memberId}, #{memberPw}, #{memberName}, #{memberAddr}, #{memberTel}, '1레벨')
+	</insert>
+	<update id="memberUpdate">
+	
+	</update>
+	<delete id="memberDelete">
+	
+	</delete>
+</mapper>

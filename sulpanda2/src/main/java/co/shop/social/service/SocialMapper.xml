@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.shop.social.service.SocialMapper">
+	<select id="socialSelectList" resultType="co.shop.social.service.SocialVO">
+		SELECT * FROM social
+	</select>
+	<select id="socialSelect" resultType="co.shop.social.service.SocialVO">
+		SELECT * FROM social
+		WHERE social_id = #{socialId}
+	</select>
+	<insert id="socialInsert">
+		INSERT INTO social(social_id, social_name, social_tel, social_grade)
+		VALUES(#{socialId}, #{socialName}, #{socialTel}, '레벨1')
+	</insert>
+	<update id="socialUpdate">
+	
+	</update>
+	<delete id="socialDelete">
+	
+	</delete>
+</mapper>
