@@ -43,4 +43,11 @@ public class ProductServiceImpl implements ProductService {
 		return map.productDelete(vo);
 	}
 
+	@Override
+	public List<ProductVO> recommendResult(String option1, String option2, String option3) {
+		// TODO Auto-generated method stub
+		return map.recommendResult(option1, option2, option3);
+	}
+
+
 }

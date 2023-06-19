@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="assets/css/templatemo.css">
     <link rel="stylesheet" href="assets/css/custom.css">
     
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+   	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </head>
 <body>
 	<br>
@@ -24,15 +24,15 @@
 	<br>
 	<div align ="center">
 	<div class="form-check form-check-inline">
-	  	<input type="radio" class="btn-check" id="beer" value="beer" name="option1" autocomplete="off">
+	  	<input type="radio" class="btn-check" id="beer" value="맥주" name="option1" autocomplete="off">
 		<label class="btn btn-outline-warning" for="beer">시원한 맥주지!</label><br>
 	</div>
 	<div class="form-check form-check-inline">
-	  	<input type="radio" class="btn-check" id="traditionalliquor" value="traditionalliquor" name="option1" autocomplete="off">
+	  	<input type="radio" class="btn-check" id="traditionalliquor" value="전통주" name="option1" autocomplete="off">
 		<label class="btn btn-outline-warning" for="traditionalliquor">걸죽한 전통주가 최고!</label><br>
 	</div>
 	<div class="form-check form-check-inline">
-	  	<input type="radio" class="btn-check" id="wine" value="wine" name="option1" autocomplete="off">
+	  	<input type="radio" class="btn-check" id="wine" value="와인" name="option1" autocomplete="off">
 		<label class="btn btn-outline-warning" for="wine">분위기있게 살짝 와인!</label><br>
 	</div>
 	</div>
@@ -43,15 +43,15 @@
 	<br>
 	<div align ="center">
 	<div class="form-check form-check-inline">
-	  	<input type="radio" class="btn-check" id="dri" value="dri" name="option2" autocomplete="off">
-		<label class="btn btn-outline-warning" for="dri">깔끔한 드라이</label><br>
+	  	<input type="radio" class="btn-check" id="dry" value="드라이" name="option2" autocomplete="off">
+		<label class="btn btn-outline-warning" for="dry">깔끔한 드라이</label><br>
 	</div>
 	<div class="form-check form-check-inline">
-	  	<input type="radio" class="btn-check" id="mid" value="mid" name="option2" autocomplete="off">
+	  	<input type="radio" class="btn-check" id="mid" value="중간" name="option2" autocomplete="off">
 		<label class="btn btn-outline-warning" for="mid">적당한게 좋아</label><br>
 	</div>
 	<div class="form-check form-check-inline">
-	  	<input type="radio" class="btn-check" id="sweet" value="sweet" name="option2" autocomplete="off">
+	  	<input type="radio" class="btn-check" id="sweet" value="스위트" name="option2" autocomplete="off">
 		<label class="btn btn-outline-warning" for="sweet">달달한게 좋지</label><br>
 	</div>
 	</div>
@@ -62,11 +62,11 @@
 	<br>
 	<div align ="center">
 	<div class="form-check form-check-inline">
-	  	<input type="radio" class="btn-check" id="sparkling" value="sparkling" name="option3" autocomplete="off">
+	  	<input type="radio" class="btn-check" id="sparkling" value="있음" name="option3" autocomplete="off">
 		<label class="btn btn-outline-warning" for="sparkling">톡쏘는 탄산취향</label><br>
 	</div>
 	<div class="form-check form-check-inline">
-	  	<input type="radio" class="btn-check" id="nosparkling" value="nosparkling" name="option3" autocomplete="off">
+	  	<input type="radio" class="btn-check" id="nosparkling" value="없음" name="option3" autocomplete="off">
 		<label class="btn btn-outline-warning" for="nosparkling">따끔한게 싫어 무탄산취향</label><br>
 	</div>
 	</div>

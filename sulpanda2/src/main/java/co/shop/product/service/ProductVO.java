@@ -2,7 +2,6 @@ package co.shop.product.service;
 
 import java.sql.Date;
 
-
 public class ProductVO {
 	private String productId;
     private String productName;

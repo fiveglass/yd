@@ -12,8 +12,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import co.shop.board.command.BoardList;
+import co.shop.cart.command.AjaxCartDelete;
+import co.shop.cart.command.AjaxCountMinus;
+import co.shop.cart.command.AjaxCountPlus;
+import co.shop.cart.command.CartInsert;
+import co.shop.cart.command.CartList;
 import co.shop.cart.command.cart;
 import co.shop.common.Command;
+import co.shop.kakaopay.command.Kakaopay;
+import co.shop.kakaopay.command.KakaopayApproval;
+import co.shop.kakaopay.command.KakaopayMessage;
 import co.shop.main.command.MainCommand;
 import co.shop.member.command.AjaxCheckId;
 import co.shop.member.command.ForgetPw;
@@ -22,6 +30,8 @@ import co.shop.member.command.ForgetId;
 import co.shop.member.command.Login;
 import co.shop.member.command.MemberInsert;
 import co.shop.member.command.MemberLogin;
+import co.shop.payment.command.DepositMessage;
+import co.shop.payment.command.paymentOrder;
 import co.shop.product.command.ProductModify;
 import co.shop.recommend.command.Recommend;
 import co.shop.recommend.command.RecommendResult;
@@ -79,6 +89,17 @@ public class FrontController extends HttpServlet {
 		map.put("/productInsert.do", new ProductInsert()); //제품 등록
 		map.put("/recommend.do", new Recommend());
 		map.put("/recommendResult.do", new RecommendResult());
+		map.put("/paymentOrder.do", new paymentOrder());
+		map.put("/kakaopay.do", new Kakaopay());
+		map.put("/kakaopayApproval.do", new KakaopayApproval());
+		map.put("/kakaopayMessage.do", new KakaopayMessage());
+		map.put("/depositMessage.do", new DepositMessage());
+		
+		map.put("/cartList.do", new CartList());
+		map.put("/ajaxCountMinus.do", new AjaxCountMinus());
+		map.put("/ajaxCountPlus.do", new AjaxCountPlus());
+		map.put("/ajaxCartDelete.do", new AjaxCartDelete());
+		map.put("/cartInsert.do", new CartInsert());
 	}
 
 	/**
@@ -92,8 +113,10 @@ public class FrontController extends HttpServlet {
 		
 		Command command = map.get(page);
 		String viewPage = command.exec(request, response);
+		System.out.println("viewPage = " + viewPage);
 		
-		if(!viewPage.endsWith(".do") && !viewPage.contains("naver") && !viewPage.contains("socialLogin.do")) {
+		if(!viewPage.endsWith(".do") && !viewPage.contains("naver") && !viewPage.contains("socialLogin.do") && !viewPage.contains("online-pay.kakao.com") && !viewPage.contains("kakaopayMessage.do")) {
+			System.out.println("aa");
 			if(viewPage.startsWith("Ajax:")) {
 				response.setContentType("text/html; charset = UTF-8");
 				response.getWriter().append(viewPage.substring(5));
@@ -109,6 +132,7 @@ public class FrontController extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 			dispatcher.forward(request, response);
 		} else {
+			System.out.println("bb");
 			response.sendRedirect(viewPage);
 		}
 	}

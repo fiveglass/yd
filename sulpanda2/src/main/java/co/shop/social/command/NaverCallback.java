@@ -46,23 +46,26 @@ public class NaverCallback implements Command {
 	//가입된 회원인지 확인
 		private String NaverLoginCheck(String id, String mobile, String name, HttpServletRequest request, HttpServletResponse response) {
 			
-			return "http://localhost/meddle/socialLogin.do?socialId=" + id + "&socialName=" + name + "&socialTel=" + mobile;
-//			try {
-//				response.sendRedirect("socialLogin.do?socialId=" + id + "&socialName=" + name + "&socialTel=" + mobile);
-//			} catch (IOException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//			
-//			SocialService ms = new SocialServiceImpl();
-//			SocialVO vo = new SocialVO();
-//			request.setAttribute("socialId", id);
-//			request.setAttribute("socialTel", mobile);
-//			request.setAttribute("socialName", name);
-//			SocialLogin sl = new SocialLogin();
-//			sl.exec(request, response);
-//			
-//			return "main/main";
+			SocialService ss = new SocialServiceImpl();
+			SocialVO vo = new SocialVO();
+			vo.setSocialId(id);
+			vo.setSocialName(name);
+			vo.setSocialTel(mobile);
+			SocialVO vovo = ss.socialSelect(vo);
+			if(vovo == null) {
+				ss.socialInsert(vo);
+				HttpSession session = request.getSession();
+				session.setAttribute("state", "social");
+				session.setAttribute("name", name);
+				session.setAttribute("id", id);
+			} else {
+				HttpSession session = request.getSession();
+				session.setAttribute("state", "social");
+				session.setAttribute("name", name);
+				session.setAttribute("id", id);
+			}
+			
+			return "main/main";
 
 		}
 		

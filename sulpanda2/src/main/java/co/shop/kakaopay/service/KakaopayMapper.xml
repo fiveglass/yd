@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.shop.kakaopay.service.KakaopayMapper">
+	<insert id="kakaopayInsert">
+		INSERT INTO orders
+		VALUES (#{orderId}, #{memberId}, #{memberAddr}, #{memberTel}, #{deliveryMessage}, #{paymentType}, #{orderPrice}, #{aid}, #{tid}, #{cid}, 'kakaopay')
+	</insert>
+	<insert id="depositInsert">
+		INSERT INTO orders (order_id, member_id, member_addr, member_tel, delivery_message, order_price, order_type)
+		VALUES (#{orderId}, #{memberId}, #{memberAddr}, #{memberTel}, #{deliveryMessage}, #{orderPrice}, 'deposit')
+	</insert>
+</mapper>

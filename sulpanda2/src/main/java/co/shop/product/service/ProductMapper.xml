@@ -10,4 +10,11 @@
 		VALUES(#{productId}, #{productName}, #{productKind}, #{productImg}, #{productImgPath}, #{productPrice}, sysdate,
 			#{productTaste}, #{productSparkling}, #{productABV}, 'N', null, null)
 	</select>
+	<select id="recommendResult" resultType="co.shop.product.service.ProductVO">
+		SELECT * FROM product
+		WHERE product_kind = #{productKind} 
+		AND product_taste = #{productTaste} 
+		AND product_sparkling = #{productSparkling}
+	</select>
+
 </mapper>
