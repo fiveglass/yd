@@ -116,7 +116,7 @@ public class FrontController extends HttpServlet {
 		System.out.println("viewPage = " + viewPage);
 		
 		if(!viewPage.endsWith(".do") && !viewPage.contains("naver") && !viewPage.contains("socialLogin.do") && !viewPage.contains("online-pay.kakao.com") && !viewPage.contains("kakaopayMessage.do")) {
-			System.out.println("aa");
+			
 			if(viewPage.startsWith("Ajax:")) {
 				response.setContentType("text/html; charset = UTF-8");
 				response.getWriter().append(viewPage.substring(5));
@@ -132,7 +132,7 @@ public class FrontController extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 			dispatcher.forward(request, response);
 		} else {
-			System.out.println("bb");
+			
 			response.sendRedirect(viewPage);
 		}
 	}
